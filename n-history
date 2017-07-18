@@ -198,7 +198,8 @@ while (( 1 )); do
     # View 1 - history
     #
     if [ "$active_view" = "0" ]; then
-        list=( "$history[@]" )
+        #list=( "$history[@]" )
+        list=( `fc -l` )
         list=( "${(@M)list:#(#i)*$NLIST_GREP_STRING*}" )
 
         if [ "$#list" -eq 0 ]; then
